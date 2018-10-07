@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import './List.css'
+import './List.css';
+
+const listQuestions = (element) => {
+    return (<li key={element.id}>{element.question}</li>)
+}
 
 class List extends Component {
     render() {
         return (
             <div className="list">
                 <ul>
-                    <li>Pytanie 1</li>
-                    <li>Pytanie 1</li>
-                    <li>Pytanie 1</li>
-                    <li>Pytanie 1</li>
+                    {this.props.json.questions.map(listQuestions)}
                 </ul>
             </div>
         );
